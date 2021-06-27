@@ -31,10 +31,10 @@ body {
       img {
         width: 100%;
         transform: translateY(-8px);
+      }
 
-        @media screen and (max-width: 875px) {
-          display: none;
-        }
+      @media screen and (max-width: 875px) {
+        display: none;
       }
     }
 
@@ -49,9 +49,9 @@ body {
         margin: 4px auto 22px;
         width: 220px;
         height: 70px;
-        background: url('./img/ig-logo.png') no-repeat center;
+        background: url('./img/ig-logo.png') no-repeat center 100%;
         @media screen and(max-width:451px) {
-          background: url('./img/ig-logo2.png') no-repeat center;
+          background: url('./img/ig-logo2.png') no-repeat center 100%;
         }
       }
       .card {

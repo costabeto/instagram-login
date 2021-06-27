@@ -47,8 +47,11 @@ body {
 
       .logo {
         margin: 4px auto 22px;
-        img {
-          width: 220px;
+        width: 220px;
+        height: 70px;
+        background: url('./img/ig-logo.png') no-repeat center;
+        @media screen and(max-width:451px) {
+          background: url('./img/ig-logo2.png') no-repeat center;
         }
       }
       .card {

@@ -6,6 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Instagram</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script
+      src="https://kit.fontawesome.com/49f2d0b557.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      window.onload = function () {
+        inputChanged();
+        document.getElementById('lang').options[5].selected = 'selected';
+      };
+      function inputChanged() {
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        if (username.length > 0 && password.length > 0) {
+          document.getElementById('login-btn').disabled = false;
+        } else {
+          document.getElementById('login-btn').disabled = true;
+        }
+      }
+    </script>
   </head>
   <body>
     <div class="main">
@@ -14,22 +36,31 @@
       </div>
       <div class="form">
         <div class="card">
-          <div class="logo">Instagram</div>
+          <div class="logo">
+            <img src="./img/ig-logo.png" />
+          </div>
           <input
             type="text"
             name="username"
             id="username"
+            oninput="inputChanged();"
             placeholder="Phone number, username, or email"
           />
-          <input type="password" placeholder="Password" />
-          <button>Log In</button>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            oninput="inputChanged();"
+            placeholder="Password"
+          />
+          <button id="login-btn">Log In</button>
           <div class="divider">
             <div class="divider-row"></div>
             or
             <div class="divider-row"></div>
           </div>
           <div class="facebook-login">
-            <span>facebook icon</span>
+            <i class="fab fa-facebook-square"></i>
             Log in with Facebook
           </div>
           <div class="forgot-password">Forgot password?</div>
@@ -38,7 +69,13 @@
           Don't have an account?
           <div class="sign-up">Sign up</div>
         </div>
-        <div class="get-app"></div>
+        <div class="get-app">
+          Get the app.
+          <div class="get-app-imgs">
+            <img src="./img/appStore.png" alt="" />
+            <img src="./img/playStore.png" alt="" />
+          </div>
+        </div>
       </div>
     </div>
     <div class="footer">
@@ -55,7 +92,7 @@
         <a href="#">Locations</a>
       </div>
       <div class="row">
-        <select aria-label="Switch Display Language" class="lang">
+        <select id="lang" class="lang" onchange="this.blur();">
           <option value="af">Afrikaans</option>
           <option value="cs">Čeština</option>
           <option value="da">Dansk</option>
